@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const Home = () => {
+	const navigate = useNavigate()
+
 	return (
 		<div className="relative w-full h-full bg-[#0f172a] text-white selection:bg-green-500/30 overflow-x-hidden">
 			{/* NAVBAR (Mejorado el Glassmorphism) */}
@@ -16,7 +19,10 @@ export const Home = () => {
 							<a href="#" className="text-sm font-medium text-slate-300! hover:text-green-400! transition-colors no-underline!">Contacto</a>
 						</div>
 						<div className="flex items-center">
-							<button className="hover:bg-green-500 text-white text-sm font-bold px-6 py-2.5 border-[.05rem] border-green-400 rounded-pill transition-all hover:shadow-[0_0_20px_rgba(34,197,94,0.3)]">
+							<button
+								className="hover:bg-green-500 text-white text-sm font-bold px-6 py-2.5 border-[.05rem] border-green-400 rounded-pill transition-all hover:shadow-[0_0_20px_rgba(34,197,94,0.3)]"
+								onClick={() => { navigate("/login") }}
+							>
 								Log In
 							</button>
 						</div>
@@ -46,8 +52,8 @@ export const Home = () => {
 					</p>
 
 					<div className="mt-12 flex justify-center gap-4">
-						<a href="#" aria-describedby="tier-hobby" class="mt-8 block rounded-md bg-white/10 px-3.5 py-2.5 text-center text-sm font-semibold text-white inset-ring inset-ring-white/5 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 sm:mt-10 no-underline!">Contact us</a>
-						<a href="#" aria-describedby="tier-enterprise" class="mt-8 block rounded-md border-[0.1rem] border-green-400 px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:bg-green-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500 sm:mt-10 no-underline! shadow-[0_0_20px_rgba(34,197,94,0.3)]">Get started today</a>
+						<a href="#" aria-describedby="tier-hobby" className="mt-8 block rounded-md bg-white/10 px-3.5 py-2.5 text-center text-sm font-semibold text-white inset-ring inset-ring-white/5 hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/75 sm:mt-10 no-underline!">Contact us</a>
+						<a href="#" aria-describedby="tier-enterprise" className="mt-8 block rounded-md border-[0.1rem] border-green-400 px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:bg-green-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500 sm:mt-10 no-underline! shadow-[0_0_20px_rgba(34,197,94,0.3)]">Get started today</a>
 					</div>
 
 					<div className="relative bg-slate-900 rounded-2xl overflow-hidden mt-18 group">

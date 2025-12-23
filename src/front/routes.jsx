@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { Layout } from "./pages/Layout";
 import { Home } from "./pages/Home";
+import { Login } from "./pages/Login";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,6 +21,8 @@ export const router = createBrowserRouter(
     <Route path="/" element={<Layout />} errorElement={<h1>Not found!</h1>} >
 
       <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+
     </Route>
   )
 );

@@ -8,7 +8,11 @@ export const Layout = () => {
     return (
         <ScrollToTop>
             <Navbar />
-                <Outlet />
+            <Outlet />
+            <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+                <div className="absolute top-96 right-0 w-2xl h-96 bg-green-500/10 rounded-full blur-[120px]" />
+                <div className="absolute bottom-96 left-0 w-2xl h-96 bg-green-500/10 rounded-full blur-[120px]" />
+            </div>
             <Footer />
         </ScrollToTop>
     )
