@@ -1,19 +1,31 @@
-import { Outlet } from "react-router-dom/dist"
-import ScrollToTop from "../components/ScrollToTop"
-import { Navbar } from "../components/Navbar"
-import { Footer } from "../components/Footer"
+import { Outlet, useLocation } from "react-router-dom";
+import { Navbar } from "../components/Navbar";
+import { Sidebar } from "../components/Sidebar";
+import { Footer } from "../components/Footer";
 
-// Base component that maintains the navbar and footer throughout the page and the scroll to top functionality.
 export const Layout = () => {
+    const location = useLocation();
+
+    // Identificamos si estamos en una ruta protegida
+    const isDashboard = location.pathname.startsWith("/private") || location.pathname.startsWith("/admin");
+
     return (
-        <ScrollToTop>
-            <Navbar />
-            <Outlet />
-            <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-                <div className="absolute top-96 right-0 w-2xl h-96 bg-green-500/10 rounded-full blur-[120px]" />
-                <div className="absolute bottom-96 left-0 w-2xl h-96 bg-green-500/10 rounded-full blur-[120px]" />
+        <div className="min-h-screen bg-[#0f172a] text-white">
+            {/* Si NO es dashboard, mostramos el Navbar superior (Home, Login) */}
+            {!isDashboard && <Navbar />}
+
+            <div className={`flex ${isDashboard ? "flex-row" : "flex-col"}`}>
+                {/* Si ES dashboard, inyectamos el Sidebar lateral */}
+                {isDashboard && <Sidebar />}
+
+                {/* Contenedor del contenido principal */}
+                <main className="flex-1 relative">
+                    <Outlet />
+                </main>
             </div>
-            <Footer />
-        </ScrollToTop>
-    )
-}
+
+            {/* Mostramos Footer solo en la web pública */}
+            {!isDashboard && <Footer />}
+        </div>
+    );
+};

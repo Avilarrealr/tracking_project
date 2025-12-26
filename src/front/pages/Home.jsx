@@ -40,7 +40,7 @@ export const Home = () => {
 
 				<div className="text-center max-w-4xl mx-auto relative z-10">
 					<h1 className="text-6xl font-extrabold tracking-tight sm:text-8xl">
-						<span className="font-medium text-7xl block mb-4 text-gray-400">Todo el orden en tus manos</span>
+						<span className="block mb-4 text-gray-400 font-medium text-4xl md:text-7xl">Todo el orden en tus manos</span>
 						{/* Gradiente Corregido para Tailwind v4 */}
 						<span className=" mt-12 block font-black text-7xl italic tracking-tighter text-white bg-clip-text">
 							TRAZER
@@ -89,32 +89,32 @@ export const Home = () => {
 						<div className="flex flex-wrap justify-center gap-12 md:gap-16 items-center opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
 							{/* Python */}
 							<div className="group relative">
-								<img src="https://cdn.simpleicons.org/python/white" alt="Python" className="h-8 w-auto transition-transform group-hover:scale-110" title="Python" />
+								<img src="https://cdn.simpleicons.org/python/white" alt="Python" className="h-8 w-auto transition-transform group-hover:scale-200" title="Python" />
 							</div>
 
 							{/* Flask */}
 							<div className="group relative">
-								<img src="https://cdn.simpleicons.org/flask/white" alt="Flask" className="h-8 w-auto transition-transform group-hover:scale-110" title="Flask" />
+								<img src="https://cdn.simpleicons.org/flask/white" alt="Flask" className="h-8 w-auto transition-transform group-hover:scale-200" title="Flask" />
 							</div>
 
 							{/* React */}
 							<div className="group relative">
-								<img src="https://cdn.simpleicons.org/react/white" alt="React" className="h-8 w-auto transition-transform group-hover:scale-110" title="React" />
+								<img src="https://cdn.simpleicons.org/react/white" alt="React" className="h-8 w-auto transition-transform group-hover:scale-200" title="React" />
 							</div>
 
 							{/* Tailwind */}
 							<div className="group relative">
-								<img src="https://cdn.simpleicons.org/tailwindcss/white" alt="Tailwind" className="h-8 w-auto transition-transform group-hover:scale-110" title="Tailwind CSS" />
+								<img src="https://cdn.simpleicons.org/tailwindcss/white" alt="Tailwind" className="h-8 w-auto transition-transform group-hover:scale-200" title="Tailwind CSS" />
 							</div>
 
 							{/* SQLAlchemy (Usamos SQL por ser más icónico) */}
 							<div className="group relative">
-								<img src="https://cdn.simpleicons.org/sqlite/white" alt="SQL" className="h-8 w-auto transition-transform group-hover:scale-110" title="SQLAlchemy" />
+								<img src="https://cdn.simpleicons.org/sqlite/white" alt="SQL" className="h-8 w-auto transition-transform group-hover:scale-200" title="SQLAlchemy" />
 							</div>
 
 							{/* Node.js */}
 							<div className="group relative">
-								<img src="https://cdn.simpleicons.org/nodedotjs/white" alt="Node" className="h-8 w-auto transition-transform group-hover:scale-110" title="Node.js" />
+								<img src="https://cdn.simpleicons.org/nodedotjs/white" alt="Node" className="h-8 w-auto transition-transform group-hover:scale-200" title="Node.js" />
 							</div>
 						</div>
 					</section>

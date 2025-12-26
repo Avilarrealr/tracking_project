@@ -8,6 +8,10 @@ import {
 import { Layout } from "./pages/Layout";
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
+import { Private } from "./pages/Private";
+import { ProtectedRoute } from "./components/ProtectedRoute";
+import { DriversAdmin } from "./components/DriversAdmin";
+import { VehiclesAdmin } from "./components/VehiclesAdmin";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,8 +24,17 @@ export const router = createBrowserRouter(
     // Root Route: All navigation will start from here.
     <Route path="/" element={<Layout />} errorElement={<h1>Not found!</h1>} >
 
+      {/* RUTAS PÚBLICAS: Cualquiera puede verlas */}
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
+
+      {/* RUTAS PROTEGIDAS: Un solo guardia para todo el grupo */}
+      <Route element={<ProtectedRoute />}>
+        <Route path="/private" element={<Private />} />
+        <Route path="/admin/drivers" element={<DriversAdmin />} />
+        <Route path="/admin/vehicles" element={<VehiclesAdmin />} />
+      </Route>
+
 
     </Route>
   )

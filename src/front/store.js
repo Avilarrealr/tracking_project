@@ -1,38 +1,33 @@
-export const initialStore=()=>{
-  return{
+export const initialStore = () => {
+  return {
     message: null,
-    todos: [
-      {
-        id: 1,
-        title: "Make the bed",
-        background: null,
-      },
-      {
-        id: 2,
-        title: "Do my homework",
-        background: null,
-      }
-    ]
+    // --- Nuevas colecciones de Logística ---
+    vehicles: [],
+    drivers: [],
+    routes: [],
+    stores: [],
+    token: localStorage.getItem("token") || null // Persistencia del login
   }
 }
 
 export default function storeReducer(store, action = {}) {
-  switch(action.type){
-    case 'set_hello':
-      return {
-        ...store,
-        message: action.payload
-      };
-      
-    case 'add_task':
+  switch (action.type) {
+    case 'set_token':
+      return { ...store, token: action.payload };
 
-      const { id,  color } = action.payload
+    case 'load_vehicles':
+      return { ...store, vehicles: action.payload };
 
-      return {
-        ...store,
-        todos: store.todos.map((todo) => (todo.id === id ? { ...todo, background: color } : todo))
-      };
+    case 'load_drivers':
+      return { ...store, drivers: action.payload };
+
+    case 'load_routes':
+      return { ...store, routes: action.payload };
+
+    case 'logout':
+      return { ...store, token: null, vehicles: [], drivers: [], routes: [] };
+
     default:
-      throw Error('Unknown action.');
-  }    
+      return store; // Cambié el throw Error por return store para evitar que la app crashee si una acción no coincide
+  }
 }
